@@ -12,10 +12,27 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(), 
+    mode === "development" && componentTagger()
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // AJOUTEZ CES LIGNES POUR LA PRODUCTION :
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    sourcemap: false,
+    // Important pour le routage
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  // Important pour le déploiement sur Vercel
+  base: "/",
 }));
