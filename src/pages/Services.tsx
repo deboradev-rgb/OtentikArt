@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, ArrowRight, Camera, Heart, Sparkles, Users, Clock, Image, Video, BookOpen } from "lucide-react";
 import { AnimatedSection, AnimatedWord } from "@/components/AnimatedSection";
-import serviceHero from "@/assets/ ceremonie (2).jpeg";
+import serviceHero from "@/assets/preparatif2.jpg";
 import serviceIntimate from "@/assets/mariee.jpeg";
 import servicePrestige from "@/assets/biz.jpeg";
 import serviceDestination from "@/assets/lov.jpeg";
