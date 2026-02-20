@@ -5,7 +5,7 @@ import { Star, ChevronLeft, ChevronRight, ArrowRight, Quote } from "lucide-react
 import { AnimatedSection, AnimatedWord } from "@/components/AnimatedSection";
 import testimonial1 from "@/assets/Mokup.jpeg";
 import testimonial2 from "@/assets/testimonial-2.jpg";
-import testimonial3 from "@/assets/testimonial-3.jpg";
+import testimonial3 from "@/assets/receptionn1.jpg";
 import flowersBg from "@/assets/flowers-bg.jpg";
 
 const heroImages = [testimonial1, testimonial2, testimonial3];

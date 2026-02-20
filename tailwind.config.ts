@@ -30,7 +30,7 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
 
-        // Palette existante (conservée)
+        // Palette principale - COULEURS VIVANTES
         copper: {
           DEFAULT: "#EB7C17",
           50: "#FEF3E9",
@@ -45,90 +45,106 @@ export default {
           900: "#632A06",
         },
 
-        beigeGold: "#EDD098",
-        terracotta: "#A55423",
-        deepBrown: "#290E18",
-        navyDeep: "#1B2A48",
-        tealOcean: "#1E729E",
-
-        gold: {
-          DEFAULT: "#EDD098",
-          light: "#F5E8C8",
+        terracotta: {
+          DEFAULT: "#D94F1A",
+          light: "#F15A24",
           dark: "#A55423",
         },
 
-        // Améliorations lisibilité – couleurs texte dédiées
+        gold: {
+          DEFAULT: "#F4C542",
+          light: "#FFD966",
+          dark: "#DAA520",
+        },
+
+        teal: {
+          DEFAULT: "#1E9AB0",
+          light: "#4ECDC4",
+          dark: "#1A6B7A",
+        },
+
+        navy: {
+          DEFAULT: "#1A3B5C",
+          light: "#2A4F73",
+          dark: "#0F2A40",
+        },
+
+        rose: {
+          DEFAULT: "#E66A7F",
+          light: "#F4A3B8",
+          dark: "#C24D62",
+        },
+
+        // Textes avec excellente lisibilité sur tous les fonds
         text: {
-          primary: "#FDFBF7",       // blanc chaud → excellent sur fond sombre
-          secondary: "#F0E4D0",     // beige clair lisible (au lieu de trop clair)
-          muted: "#D4C5B0",         // gris-beige doux, contraste ≥ 4.5:1 sur navy/deepBrown
-          dark: "#2A1A10",          // brun très foncé pour textes sur fond clair
-          inverse: "#0F0F0F",       // noir quasi-pur quand besoin max contraste
+          light: {
+            primary: "#1A1A2E",    // Texte principal sur fond clair
+            secondary: "#2D4059",   // Texte secondaire sur fond clair
+            muted: "#4A5568",       // Texte atténué sur fond clair
+          },
+          dark: {
+            primary: "#F7F7F7",     // Texte principal sur fond sombre
+            secondary: "#E0E0E0",    // Texte secondaire sur fond sombre
+            muted: "#A0A0A0",        // Texte atténué sur fond sombre
+          }
         },
 
-        primary: {
-          DEFAULT: "#EB7C17",
-          foreground: "#FFFFFF",    // toujours blanc sur boutons primary
+        // Thème clair
+        light: {
+          background: "#FFF9F5",
+          foreground: "#1A1A2E",
+          card: "#FFFFFF",
+          "card-foreground": "#1A1A2E",
+          popover: "#FFFFFF",
+          "popover-foreground": "#1A1A2E",
+          muted: "#F0F0F0",
+          "muted-foreground": "#4A5568",
+          accent: "#F4C542",
+          "accent-foreground": "#1A1A2E",
+          border: "#E2E8F0",
+          input: "#E2E8F0",
         },
 
-        secondary: {
-          DEFAULT: "#290E18",
-          foreground: "#FDFBF7",    // texte clair forcé
+        // Thème sombre
+        dark: {
+          background: "#0F172A",
+          foreground: "#F7F7F7",
+          card: "#1E293B",
+          "card-foreground": "#F7F7F7",
+          popover: "#1E293B",
+          "popover-foreground": "#F7F7F7",
+          muted: "#334155",
+          "muted-foreground": "#A0A0A0",
+          accent: "#F4C542",
+          "accent-foreground": "#0F172A",
+          border: "#334155",
+          input: "#334155",
         },
 
-        muted: {
-          DEFAULT: "#3A4759",       // gris-bleu plus clair que navyDeep pur
-          foreground: "#E5E7EB",
-        },
-
-        accent: {
-          DEFAULT: "#1E729E",
-          foreground: "#FFFFFF",
-        },
-
-        card: {
-          DEFAULT: "#252F3F",       // navyDeep un peu éclairci → meilleur contraste texte
-          foreground: "#F3F4F6",
-        },
-
-        popover: {
-          DEFAULT: "#2C1F19",
-          foreground: "#F5E8D0",
-        },
-
-        // Variables CSS – lisibilité prioritaire
-        "--background": "220 25% 9%",
-        "--foreground": "40 20% 98%",
-        "--card": "220 28% 16%",          // un peu plus clair que #1B2A48
-        "--card-foreground": "0 0% 98%",
-        "--popover": "220 35% 13%",
-        "--popover-foreground": "40 15% 96%",
-        "--primary": "30 90% 55%",
-        "--primary-foreground": "0 0% 100%",
-        "--secondary": "220 40% 13%",
-        "--secondary-foreground": "40 20% 97%",
-        "--muted": "220 18% 22%",
-        "--muted-foreground": "40 15% 78%",   // plus clair que 65%
-        "--accent": "197 60% 48%",
-        "--accent-foreground": "0 0% 100%",
-        "--border": "220 20% 24%",
-        "--input": "220 20% 24%",
-        "--ring": "30 90% 55%",
+        // Variables CSS - Support light/dark mode
+        "--background": "0 0% 100%",
+        "--foreground": "222.2 84% 4.9%",
+        "--card": "0 0% 100%",
+        "--card-foreground": "222.2 84% 4.9%",
+        "--popover": "0 0% 100%",
+        "--popover-foreground": "222.2 84% 4.9%",
+        "--primary": "24 90% 55%",
+        "--primary-foreground": "210 40% 98%",
+        "--secondary": "210 40% 96.1%",
+        "--secondary-foreground": "222.2 47.4% 11.2%",
+        "--muted": "210 40% 96.1%",
+        "--muted-foreground": "215.4 16.3% 46.9%",
+        "--accent": "45 90% 60%",
+        "--accent-foreground": "222.2 47.4% 11.2%",
+        "--border": "214.3 31.8% 91.4%",
+        "--input": "214.3 31.8% 91.4%",
+        "--ring": "24 90% 55%",
         "--radius": "0.5rem",
 
-        // Gradients
+        // Gradients vibrants
         "--gradient-start": "#EB7C17",
-        "--gradient-mid": "#A55423",
-        "--gradient-end": "#1E729E",
-      },
-
-      // Ajout direct pour usage facile
-      textColor: {
-        primary: "var(--text-primary)",
-        secondary: "var(--text-secondary)",
-        muted: "var(--text-muted)",
-        dark: "var(--text-dark)",
-        inverse: "var(--text-inverse)",
+        "--gradient-mid": "#F4C542",
+        "--gradient-end": "#1E9AB0",
       },
 
       borderRadius: {
@@ -145,6 +161,8 @@ export default {
         "kenburns": { "0%": { transform: "scale(1)" }, "100%": { transform: "scale(1.12)" } },
         "gradient-x": { "0%, 100%": { backgroundPosition: "0% 50%" }, "50%": { backgroundPosition: "100% 50%" } },
         "pulse-glow": { "0%, 100%": { boxShadow: "0 0 0 0 rgba(235,124,23,0.4)" }, "70%": { boxShadow: "0 0 0 15px rgba(235,124,23,0)" } },
+        "float": { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-10px)" } },
+        "shine": { "0%": { left: "-100%" }, "100%": { left: "200%" } },
       },
 
       animation: {
@@ -154,18 +172,24 @@ export default {
         "kenburns": "kenburns 18s ease-in-out infinite alternate",
         "gradient-x": "gradient-x 12s ease infinite",
         "pulse-glow": "pulse-glow 2.5s ease-in-out infinite",
+        "float": "float 6s ease-in-out infinite",
+        "shine": "shine 3s ease-in-out infinite",
       },
 
       boxShadow: {
-        luxury: "0 10px 25px -5px rgba(41, 14, 24, 0.25)",
+        luxury: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.02)",
         "luxury-lg": "0 20px 40px -10px rgba(235, 124, 23, 0.3)",
-        gold: "0 0 25px -5px rgba(237, 208, 152, 0.5)",
+        "luxury-xl": "0 30px 60px -10px rgba(244, 197, 66, 0.4)",
+        gold: "0 0 25px -5px rgba(244, 197, 66, 0.5)",
+        "inner-glow": "inset 0 0 20px rgba(244, 197, 66, 0.3)",
       },
 
       backgroundImage: {
-        "gradient-hero": "linear-gradient(to bottom right, #290E18, #1B2A48, #1E729E)",
-        "gradient-gold-copper": "linear-gradient(90deg, #EDD098, #EB7C17, #A55423)",
-        "gradient-ocean-copper": "linear-gradient(135deg, #1E729E, #EB7C17)",
+        "gradient-hero": "linear-gradient(to bottom right, #1A3B5C, #0F172A, #1E9AB0)",
+        "gradient-gold-copper": "linear-gradient(90deg, #F4C542, #EB7C17, #E66A7F)",
+        "gradient-ocean-copper": "linear-gradient(135deg, #1E9AB0, #EB7C17)",
+        "gradient-sunset": "linear-gradient(135deg, #E66A7F, #F4C542, #EB7C17)",
+        "gradient-shine": "linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.1) 50%, transparent 75%)",
       },
     },
   },
