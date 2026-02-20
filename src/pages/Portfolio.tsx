@@ -6,11 +6,11 @@ import { AnimatedSection, AnimatedWord } from "@/components/AnimatedSection";
 // ────────────────────────────────────────────────
 // IMPORTS IMAGES (seulement ceux qui existent vraiment)
 import hero1 from "@/assets/biz3.jpeg";
-import hero2 from "@/assets/Biz.jpeg";
+import hero2 from "@/assets/biz.jpeg";
 import hero3 from "@/assets/lov1.jpeg";
 import featured1 from "@/assets/lov2.jpeg";
 import featured2 from "@/assets/biz1.jpeg";
-import featured3 from "@/assets/Biz.jpeg";
+import featured3 from "@/assets/biz.jpeg";
 import preparatif from "@/assets/prepa.jpg";
 import preparatif1 from "@/assets/preparatif.jpg";
 import preparatif2 from "@/assets/preparatif1.jpg";
