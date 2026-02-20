@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatedSection, AnimatedWord } from "@/components/AnimatedSection";
 
 // ────────────────────────────────────────────────
-// IMPORTS IMAGES (seulement ceux qui existent vraiment)
+// IMPORTS IMAGES (inchangé)
 import hero1 from "@/assets/biz3.jpeg";
 import hero2 from "@/assets/biz.jpeg";
 import hero3 from "@/assets/lov1.jpeg";
@@ -146,9 +146,25 @@ const Portfolio = () => {
     return () => window.removeEventListener("keydown", handleEsc);
   }, []);
 
+  // Animation variants pour les images
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-100">
-      {/* Hero */}
+      {/* Hero (inchangé) */}
       <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] overflow-hidden">
         <img
           src={detail2}
@@ -207,7 +223,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Galerie */}
+      {/* Galerie - Version corrigée */}
       <section className="py-10 md:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6">
           {filteredImages.length === 0 ? (
@@ -219,43 +235,43 @@ const Portfolio = () => {
               Aucune photo disponible dans cette catégorie pour le moment.
             </motion.div>
           ) : (
-            <LayoutGroup>
-              <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-                <AnimatePresence mode="wait">
-                  {filteredImages.map((img, i) => (
-                    <motion.div
-                      key={img.src}
-                      layoutId={`card-${img.src}`}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -30, transition: { duration: 0.3 } }}
-                      transition={{ duration: 0.5, delay: i * 0.05, type: "spring", stiffness: 120 }}
-                      className="group relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                      onClick={() => openLightbox(i)}
-                    >
-                      <img
-                        src={img.src}
-                        alt={img.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                        <h3 className="font-heading text-lg sm:text-xl text-white drop-shadow-lg line-clamp-2">
-                          {img.title}
-                        </h3>
-                        <p className="text-amber-300 text-xs sm:text-sm tracking-wide mt-1">{img.category}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </motion.div>
-            </LayoutGroup>
+            <motion.div 
+              key={activeCategory} // Force le re-rendu quand la catégorie change
+              variants={containerVariants}
+              initial="hidden"
+              animate="show"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
+            >
+              {filteredImages.map((img, i) => (
+                <motion.div
+                  key={`${img.src}-${i}`}
+                  variants={itemVariants}
+                  transition={{ duration: 0.5, type: "spring", stiffness: 120 }}
+                  className="group relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                  onClick={() => openLightbox(i)}
+                  layout
+                >
+                  <img
+                    src={img.src}
+                    alt={img.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                    <h3 className="font-heading text-lg sm:text-xl text-white drop-shadow-lg line-clamp-2">
+                      {img.title}
+                    </h3>
+                    <p className="text-amber-300 text-xs sm:text-sm tracking-wide mt-1">{img.category}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           )}
         </div>
       </section>
 
-      {/* Lightbox */}
+      {/* Lightbox (inchangé) */}
       <AnimatePresence>
         {lightboxIndex !== null && (
           <motion.div
