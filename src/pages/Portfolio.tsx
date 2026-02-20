@@ -39,7 +39,7 @@ import servicePrestige from "@/assets/reception.jpg";
 import serviceDestination from "@/assets/destination.jpg";
 import service from "@/assets/destination0.jpg";
 import service1 from "@/assets/destination1.jpg";
-import service2 from "@/assets/destination2.jpg";
+import service2 from "@/assets/destination.jpg";
 import service3 from "@/assets/destination4.jpg";
 import process1 from "@/assets/mariee.jpeg";
 import process2 from "@/assets/portrait.jpg";
